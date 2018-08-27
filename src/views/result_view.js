@@ -18,7 +18,7 @@ ResultView.prototype.updateView = function (result) {
   resultElement.textContent = `You've typed 1 word`;
   }
   else {
-    resultElement.textContent = `You've typed ${result} word(s)`;
+    resultElement.textContent = `You've typed ${result} words`;
   }
 };
 
