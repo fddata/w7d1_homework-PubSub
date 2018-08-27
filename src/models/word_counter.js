@@ -10,7 +10,7 @@ WordCounter.prototype.bindEvents = function (){
     const inputtedText = event.detail;
     const result = this.getWordCount(inputtedText);
     // console.log(result);
-    PubSub.publish("WordCounter:result", result)
+    PubSub.publish("WordCounter:result", result);
   });
 };
 
