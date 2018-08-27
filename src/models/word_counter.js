@@ -9,15 +9,22 @@ WordCounter.prototype.bindEvents = function (){
     // console.log(event.detail);
     const inputtedText = event.detail;
     const result = this.getWordCount(inputtedText);
-    console.log(result);
+    // console.log(result);
     PubSub.publish("WordCounter:result", result);
   });
 };
 
 
 WordCounter.prototype.getWordCount = function (inputText) {
-  return inputText.split(" ").length;
-
+  //this method adds a secondary filtering step to remove all muliple spaces
+  // arrayWithSpaces counts consecutive spaces as words otherwise!
+  arrayWithSpaces = inputText.split(" ");
+  // console.log(arrayWithSpaces.length);
+  arrayNoSpaces = arrayWithSpaces.filter((e) => {
+    return e !== '';
+  });
+  // console.log(arrayNoSpaces);
+  return arrayNoSpaces.length;
 };
 
 
