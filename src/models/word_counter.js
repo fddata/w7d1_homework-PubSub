@@ -4,6 +4,10 @@ const WordCounter = function (){
 
 };
 
+//word counter has to subscribe to  InputView:text-inputted
+//then process the input with getWordCount
+//then publish the result on WordCounter:result
+
 WordCounter.prototype.bindEvents = function (){
   PubSub.subscribe("InputView:text-inputted", (event) => {
     // console.log(event.detail);
@@ -16,15 +20,8 @@ WordCounter.prototype.bindEvents = function (){
 
 
 WordCounter.prototype.getWordCount = function (inputText) {
-  //this method adds a secondary filtering step to remove all muliple spaces
-  // arrayWithSpaces counts consecutive spaces as words otherwise!
-  arrayWithSpaces = inputText.split(" ");
-  // console.log(arrayWithSpaces.length);
-  arrayNoSpaces = arrayWithSpaces.filter((e) => {
-    return e !== '';
-  });
-  // console.log(arrayNoSpaces);
-  return arrayNoSpaces.length;
+  answer = inputText.trim().split(/\s+/).length;
+  return answer;
 };
 
 

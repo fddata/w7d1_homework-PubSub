@@ -15,23 +15,5 @@ document.addEventListener('DOMContentLoaded', () => {
   const resultView = new ResultView();
   resultView.bindEvents();
 
-  // console.log('JavaScript Loaded');
+  console.log('JavaScript Loaded');
 });
-
-
-
-
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   const inputView = new InputView();
-//   inputView.bindEvents();
-//
-//   const primeChecker = new PrimeChecker();
-//   primeChecker.bindEvents();
-//
-//   const resultView = new ResultView();
-//   resultView.bindEvents();
-//
-//   // console.log('JavaScript loaded');
-// });

@@ -5,15 +5,14 @@ const InputView = function (){
 };
 
 
-// need to add a way to remove multiple spaces from the result.
-
 InputView.prototype.bindEvents = function () {
 
   const input = document.querySelector('#wordcounter-form');
   input.addEventListener('submit', (event) => {
     event.preventDefault();
-    const inputTextArea = document.querySelector('#text');
-    const inputtedText = inputTextArea.value;
+    console.log(event.dir);
+    // now select the textarea, it has the id 'text'
+    const inputtedText = event.target.text.value;
     PubSub.publish('InputView:text-inputted', inputtedText);
   });
 };
